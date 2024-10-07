@@ -8,8 +8,11 @@ import org.springframework.boot.autoconfigure.SpringBootApplication;
 @SpringBootApplication
 public class IntroductionToSpringBootApplication implements CommandLineRunner {
 
+//	@Autowired
+//	Apple appleObj;
+
 	@Autowired
-	Apple appleObj;
+	DBService dbService;
 	public static void main(String[] args) {
 		SpringApplication.run(IntroductionToSpringBootApplication.class, args);
 
@@ -17,6 +20,7 @@ public class IntroductionToSpringBootApplication implements CommandLineRunner {
 
 	@Override
 	public void run(String... args) throws Exception {
-		appleObj.eat();
+		System.out.println(dbService.getData());
+		//appleObj.eat();
 	}
 }
